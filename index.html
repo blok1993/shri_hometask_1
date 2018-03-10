@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    <!-- Шаблон для карточки -->
     <template id="card-template">
         <div class="card-block">
             <div class="card-title YSText-Bold"></div>
@@ -179,7 +180,7 @@
 
                 if (cardImage) {
 
-                    //Формируем элемент img и его параметры
+                    //Формируем элемент img и его атрибут srcset
                     let imgUrlPart1 = cardImage.split('.')[0];
                     let imgUrlPart2 = cardImage.split('.')[1];
 
