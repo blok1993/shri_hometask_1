@@ -21,6 +21,8 @@
                 <div class="description-text"></div>
 
                 <div class="controls">
+                    <div class="card-channel-name hidden YSText-Bold"></div>
+
                     <div class="control-element actions"></div>
                     <div class="control-element heart"></div>
                 </div>
@@ -117,6 +119,7 @@
                     titleColor: '#000000',
                     description: "Проверить это проще всего на примере мобилы. Если подарить ребенку игрушечный китайский телефон, то на него будет потрачено полтора дня внимания. А если подарить ребенку даже испорченный, но настоящий мобильник, то ребенок будет с ним играться бесконечно. То же самое касается и всех остальных игрушек. Дать ребенку возможность порезать юсб-провод ножницами иногда гораздо дороже и важнее, чем подарить радиоуправляемый экскаватор.",
                     size: "s",
+                    channelName: 'Артемий Лебедев'
                 },
                 {
                     title: "Исполнительница роли Молчуньи из MGS V в очередной раз намекнула на участие в Death Stranding",
@@ -155,7 +158,7 @@
                     titleColor: '#000000',
                     description: "«Одноклассники» выпустили десктопное игровое приложение «ОК Игры» для компьютеров с операционной системой Windows, с его помощью пользователи могут быстро запускать игры из ОК на своем компьютере.",
                     size: "s",
-                    channelName: 'Роем',
+                    channelName: 'Роем'
                 }
             ];
 
@@ -168,6 +171,7 @@
                 let cardImage = data[i].image;
                 let cardDescription = data[i].description;
                 let cardSize = data[i].size;
+                let cardChannelName = data[i].channelName;
                 let cardTemplateInstance = document.importNode(cardTemplate.content, true);
 
                 cardTemplateInstance.querySelector(".card-block").classList.add("card-block_size_" + cardSize);
@@ -193,6 +197,11 @@
                     cardTemplateInstance.querySelector(".card-pic").appendChild(temporaryEl.firstChild);
                 } else if (cardSize === "s") {
                     cardTemplateInstance.querySelector(".card-block").classList.add("card-block_size_" + cardSize + "_without_image");
+                }
+
+                if (cardChannelName) {
+                    cardTemplateInstance.querySelector(".card-channel-name").classList.remove("hidden");
+                    cardTemplateInstance.querySelector(".card-channel-name").textContent = cardChannelName;
                 }
 
                 container.appendChild(cardTemplateInstance);

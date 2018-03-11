@@ -22,6 +22,10 @@
     grid-row-gap: 32px;
 }
 
+.hidden {
+    display: none !important;
+}
+
 .card-block {
     grid-row: span 1;
     position: relative;
@@ -34,8 +38,7 @@
 }
 
 .card-block_size_s_without_image {
-    max-height: 22vw;
-    overflow: hidden;
+    max-height: 21.5vw;
 }
 
 .card-block_size_m {
@@ -67,7 +70,7 @@
     margin-left: 10px;
 }
 
-.card-block_size_s .controls, .card-block_size_l .controls {
+.card-block_size_s .control-element, .card-block_size_l .control-element {
     display: none;
 }
 
@@ -116,6 +119,42 @@
 .card-block_size_s_without_image .card-title {
     position: relative;
     padding-bottom: 0;
+}
+
+.card-block_size_s_without_image .card-description {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-block_size_s_without_image .description-text {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.card-block_size_s_without_image .controls {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    flex-shrink: 0;
+    margin: 10px 0 0 0;
+}
+
+.card-block_size_s_without_image .card-channel-name {
+    display: flex;
+    flex-grow: 1;
+    align-items: flex-start;
+    font-size: 12px;
+}
+
+.card-block_size_s_without_image .control-element {
+    display: flex;
+}
+
+.card-block_size_s_without_image .control-element {
+    margin-left: 10px;
 }
 
 .card-block_size_l .card-title {
@@ -172,7 +211,6 @@
 
     .card-block_size_s_without_image {
         max-height: none;
-        overflow: visible;
     }
 
     .card-block_size_m {
@@ -217,7 +255,6 @@
 
     .card-block_size_s_without_image {
         max-height: none;
-        overflow: visible;
     }
 
     .card-block_size_m .card-title, .card-block_size_s .card-title {
