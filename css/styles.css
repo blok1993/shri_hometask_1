@@ -35,6 +35,47 @@
 
 .card-block_size_s {
     grid-column: span 2;
+    min-height: 190px;
+    overflow: hidden;
+}
+
+.card-block_size_s .card-title {
+    position: relative !important;
+    top: initial !important;
+    left: initial !important;
+}
+
+.card-block_size_s .card-pic {
+    position: static;
+    margin-top: 0 !important;
+}
+
+.card-block_size_s .card-pic img {
+    width: 100%;
+    position:  absolute;
+    bottom: 0;
+}
+
+.card-block_size_s .card-description {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-top: 0;
+}
+
+.card-block_size_s .card-description .controls {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-grow: 1;
+    z-index: 1;
+    margin: 0;
+    padding: 5px 10px;
+}
+
+.card-block_size_s .card-description .controls .control-element {
+    display: block;
 }
 
 .card-block_size_s_without_image {
@@ -121,6 +162,11 @@
     padding-bottom: 0;
 }
 
+.card-block_size_s_without_image .card-pic {
+    position: absolute;
+    bottom: 0;
+}
+
 .card-block_size_s_without_image .card-description {
     display: flex;
     flex-direction: column;
@@ -134,12 +180,13 @@
     overflow: hidden;
 }
 
-.card-block_size_s_without_image .controls {
+.card-block_size_s_without_image .card-description .controls {
     display: flex;
     flex-direction: row;
     flex-grow: 1;
     flex-shrink: 0;
     margin: 10px 0 0 0;
+    padding: 0;
 }
 
 .card-block_size_s_without_image .card-channel-name {
@@ -183,15 +230,19 @@
 /*Для широкоформатных экранов*/
 @media screen and (min-width: 1280px) {
     .card-title {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
     .card-block_size_s .card-title {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
     .card-description {
         font-size: 1rem;
+    }
+
+    .card-channel-name {
+        font-size: 1rem !important;
     }
 }
 
@@ -205,12 +256,16 @@
         grid-auto-flow: row dense;
     }
 
+    .layout_explicit > .header, .layout_explicit > .layout_implicit {
+        grid-column: 2 / 12;
+    }
+
     .card-block_size_s {
         grid-column: span 3;
     }
 
     .card-block_size_s_without_image {
-        max-height: none;
+        max-height: 190px;
     }
 
     .card-block_size_m {
