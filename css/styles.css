@@ -159,7 +159,7 @@
 
 .card-block_size_s_without_image .card-title {
     position: relative;
-    padding-bottom: 0;
+    padding-bottom: 10px;
 }
 
 .card-block_size_s_without_image .card-pic {
@@ -231,6 +231,10 @@
 @media screen and (min-width: 1280px) {
     .card-title {
         font-size: 1.2rem;
+    }
+
+    .card-block_size_s {
+        min-height: 250px;
     }
 
     .card-block_size_s .card-title {
